@@ -27,8 +27,9 @@ def find_first_unique(entered):
 
 if __name__ == '__main__':
     try:
+        pattern = r'\S'
         text = input('input text: ')
-        if text == '':
+        if re.search(pattern, text) is None:
             raise ValueError('Empty string!')
         print(f'The first unique character: {find_first_unique(text)}')
     except ValueError as e:
