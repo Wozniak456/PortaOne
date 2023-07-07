@@ -19,10 +19,13 @@ def find_first_unique(entered):
             else:
                 unique_chars[unique_char] = 1
 
-    unique_symbols = [key for key, value in unique_chars.items() if value == 1]
+    result = None
+    for key, value in unique_chars.items():
+        if value == 1:
+            result = key
+            break
     print(f"The first unique characters in all words and their rarity: {unique_chars}")
-    print("First unique characters with rarity 1:", unique_symbols)
-    return unique_symbols[0]
+    return result
 
 
 if __name__ == '__main__':
